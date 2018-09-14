@@ -1,11 +1,11 @@
 /**
- * Version: 0.1.5
+ * Version: 0.1.6
  * Made by Loggeru
  */
 
 const LAIN_ID = 80081,                          // Lein's Dark Root Beer ID
     DELAY = 200,                                // How much time in miliseconds should wait after buff (seconds * 1000)
-    NOTIFICATIONS = true;                       // true - Activates notification when you drink / false - Deactivates
+    NOTIFICATIONS = false;                      // true - Activates notification when you drink / false - Deactivates
 
 /**
  * DON'T CHANGE ANYTHING BELOW THIS LINE
@@ -32,7 +32,7 @@ module.exports = function LetMeDrink(dispatch) {
     command.add('letmedrink', () => {
         enabled = !enabled;
         let txt = (enabled) ? 'ENABLED' : 'DISABLED';
-        message('Let me Drink is ' + txt, true);
+        message(txt, true);
     });
 
     command.add('getskillinfo', () => {
@@ -43,6 +43,7 @@ module.exports = function LetMeDrink(dispatch) {
     dispatch.hook('S_LOGIN', 10, (event) => {
         oCid = event.gameId;
         oJob = (event.templateId - 10101) % 100;
+//        enabled = ([0, 1, 3, 4, 5, 8, 12].includes(oJob) ? true : false;
     });
 
     dispatch.hook('C_PLAYER_LOCATION', 5, { order: -10 }, (event) => {
@@ -52,7 +53,7 @@ module.exports = function LetMeDrink(dispatch) {
         oW = event.w;
     });
 
-    dispatch.hook('S_INVEN', 12, { order: -10 }, (event) => {
+    dispatch.hook('S_INVEN', 16, { order: -10 }, (event) => {
         if (!enabled) return;
 
         let tempInv = event.items;
@@ -72,10 +73,10 @@ module.exports = function LetMeDrink(dispatch) {
         }
     });
 
-    dispatch.hook('C_START_SKILL', 5, { order: -10 }, (event) => {
+    dispatch.hook('C_START_SKILL', 7, { order: -10 }, (event) => {
         if (!enabled) return;
 
-        let sInfo = getSkillInfo(event.skill);
+        let sInfo = getSkillInfo(event.skill.id);
 
         if (getInfoCommand) {
             message('Skill info: (group: ' + sInfo.group + ' / job: ' + oJob + ')');
@@ -114,7 +115,7 @@ module.exports = function LetMeDrink(dispatch) {
     }
 
     function getSkillInfo(id) {
-        let nid = id -= 0x4000000;
+        let nid = id;// -= 0x4000000;
         return {
             id: nid,
             group: Math.floor(nid / 10000),
@@ -125,7 +126,7 @@ module.exports = function LetMeDrink(dispatch) {
 
     function message(msg, chat = false) {
         if (chat == true) {
-            command.message('(Let Me Drink) ' + msg);
+            command.message(msg);
         } else {
             console.log('(Let Me Drink) ' + msg);
         }
