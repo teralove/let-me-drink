@@ -1,0 +1,21 @@
+{
+  "files": {
+    "skills.js": {
+        "overwrite": false,
+        "hash": "4019bd7dfd2fa16631b021e7ef49f32198b273ef55723d2244ffd941c4ba3ed7"
+    },
+    "config.json": {
+        "overwrite": false,
+        "hash": "a812503cb69d7525b472a4b7e05914a3bfe140952619a09d0cec98e86dcaaa44"
+    },
+    "index.js": "59514e0dc7a6dc988cdc6ad73e1b05b5cd6cfa6b5debad88d3a518787951f6de"
+  },
+  "defs": {   
+    "S_LOGIN": 10,
+    "C_PLAYER_LOCATION": 5,
+    "S_INVEN": 16,    
+    "S_START_COOLTIME_ITEM": 1,
+    "C_START_SKILL": 7,    
+    "C_USE_ITEM": 3
+  }
+}
