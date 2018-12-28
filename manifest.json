@@ -2,13 +2,13 @@
   "files": {
     "skills.js": {
         "overwrite": false,
-        "hash": "4019bd7dfd2fa16631b021e7ef49f32198b273ef55723d2244ffd941c4ba3ed7"
+        "hash": "15c014d362542373ea23242e31c21937bb2cfbf64ad7304d7877384a401b108b"
     },
     "config.json": {
         "overwrite": false,
         "hash": "a812503cb69d7525b472a4b7e05914a3bfe140952619a09d0cec98e86dcaaa44"
     },
-    "index.js": "59514e0dc7a6dc988cdc6ad73e1b05b5cd6cfa6b5debad88d3a518787951f6de"
+    "index.js": "6a9b718b4879d1646e0d614b2bb6537a82dee515f30e8297d2f810f62fd61272"
   },
   "defs": {   
     "S_LOGIN": 10,
