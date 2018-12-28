@@ -54,7 +54,7 @@ module.exports = function LetMeDrink(dispatch) {
         if (!enabled) return;
 
         let tempInv = event.items;
-        for (i = 0; i < tempInv.length; i++) {
+        for (let i = 0; i < tempInv.length; i++) {
             if (tempInv[i].id == LAIN_ID) {
                 qtdDrink = tempInv[i].amount;
                 idDrink = tempInv[i].dbid;
