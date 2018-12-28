@@ -34,4 +34,9 @@ module.exports = [
         group: 17,
         job: 1
     },
+    // Windsong
+    {
+        group: 35,
+        job: 7
+    },
 ]

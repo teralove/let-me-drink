@@ -82,7 +82,7 @@ module.exports = function LetMeDrink(dispatch) {
             getInfoCommand = false;
         }
 
-        for (s = 0; s < skills.length; s++) {
+        for (let s = 0; s < skills.length; s++) {
             if (skills[s].group == sInfo.group && skills[s].job == oJob && isCdDrink == false && qtdDrink > 0) {
                 useItem();
                 break;

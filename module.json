@@ -2,8 +2,8 @@
     "disableAutoUpdate": false,
 	"name": "let-me-drink",
 	"author": "Loggeru, teralove",
-    "version": "0.1.7"
-	"description": "Uses Root Beer after you use buff skills.",
+    "version": "0.1.7",
+	"description": "Auto-drink Lein's Root Beer after you use buff skills.",
 	"options": {
 		"niceName": "Let Me Drink"
 	},
