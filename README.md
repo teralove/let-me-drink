@@ -13,6 +13,7 @@ Auto 'Lein's Dark Root Beer' module for Tera Proxy
     * Ragnarok
     * Blood Lust
     * Adrenaline Rush
+    * Windsong
     * Can add/remove in 'skills.js' file
  * Will only try to use if you have one or more beer in inventory
  * Can look in 'index.js' file to change:
