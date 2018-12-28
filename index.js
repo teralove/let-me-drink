@@ -1,21 +1,13 @@
 /**
- * Version: 0.1.6
+ * Version: 0.1.7
  * Made by Loggeru
  */
 
-const LAIN_ID = 80081,                          // Lein's Dark Root Beer ID
-    DELAY = 200,                                // How much time in miliseconds should wait after buff (seconds * 1000)
-    NOTIFICATIONS = false;                      // true - Activates notification when you drink / false - Deactivates
-
-/**
- * DON'T CHANGE ANYTHING BELOW THIS LINE
- */
-
-const skills = require('./skills'),
-    Command = require('command');
-
 module.exports = function LetMeDrink(dispatch) {
-    const command = Command(dispatch);
+
+    const LAIN_ID = 80081,                          // Lein's Dark Root Beer ID
+        skills = require('./skills'),
+        config = require('./config.json');
 
     let enabled = true,
         oCid = null,
@@ -27,26 +19,31 @@ module.exports = function LetMeDrink(dispatch) {
         qtdDrink = 0,
         idDrink = null,
         isCdDrink = false,
-        getInfoCommand = false;
+        getInfoCommand = false,
+        DELAY = 200,                                // How much time in miliseconds should wait after buff (seconds * 1000)
+        NOTIFICATIONS = false;                      // true - Activates notification when you drink / false - Deactivates
 
-    command.add('letmedrink', () => {
+    dispatch.command.add('letmedrink', () => {
         enabled = !enabled;
         let txt = (enabled) ? 'ENABLED' : 'DISABLED';
         message(txt, true);
     });
 
-    command.add('getskillinfo', () => {
+    dispatch.command.add('getskillinfo', () => {
         getInfoCommand = true;
         message('Use the desired skill and check proxy console.', true);
     });
 
     dispatch.hook('S_LOGIN', 10, (event) => {
+        loadConfig();
         oCid = event.gameId;
         oJob = (event.templateId - 10101) % 100;
-//        enabled = ([0, 1, 3, 4, 5, 8, 12].includes(oJob) ? true : false;
+        enabled = skills.find(p => p.job == oJob) ? true : false;
     });
 
     dispatch.hook('C_PLAYER_LOCATION', 5, { order: -10 }, (event) => {
+        if (!enabled) return;
+        
         oX = (event.loc.x + event.dest.x) / 2;
         oY = (event.loc.y + event.dest.y) / 2;
         oZ = (event.loc.z + event.dest.z) / 2;
@@ -67,6 +64,8 @@ module.exports = function LetMeDrink(dispatch) {
     });
 
     dispatch.hook('S_START_COOLTIME_ITEM', 1, event => {
+        if (!enabled) return;
+                
         if (event.item == LAIN_ID && isCdDrink == false) {
             isCdDrink = true;
             setTimeout(function () { isCdDrink = false; }, event.cooldown * 1000);
@@ -126,9 +125,18 @@ module.exports = function LetMeDrink(dispatch) {
 
     function message(msg, chat = false) {
         if (chat == true) {
-            command.message(msg);
+            dispatch.command.message(msg);
         } else {
             console.log('(Let Me Drink) ' + msg);
         }
     }
+    
+    function loadConfig() {
+        if (config) {
+            ({DELAY,NOTIFICATIONS} = config)
+        } else {
+            dispatch.command.message("Error: Unable to load config.json - Using default values for now");
+        }
+    }
+    
 }

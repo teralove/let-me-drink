@@ -1,0 +1,12 @@
+{
+    "disableAutoUpdate": false,
+	"name": "let-me-drink",
+	"author": "Loggeru, teralove",
+    "version": "0.1.7"
+	"description": "Uses Root Beer after you use buff skills.",
+	"options": {
+		"niceName": "Let Me Drink"
+	},
+    "servers": ["https://raw.githubusercontent.com/teralove/let-me-drink/master/"],
+    "supportUrl": "https://github.com/teralove/let-me-drink/issues"
+}

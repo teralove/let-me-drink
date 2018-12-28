@@ -1,12 +1,8 @@
 # let-me-drink
 
-Version: 0.1.5
+Version: 0.1.7
 
 Auto 'Lein's Dark Root Beer' module for Tera Proxy
-
-If you find any bug just let me know.
-
-**Need _Command_ module by Pinkie to work.**
 
 ## Done
  * Uses Root Beer right after you use buff skills
@@ -24,15 +20,10 @@ If you find any bug just let me know.
     * Delay to use beer after buff skill
 
 ## Commands
-**Need to be used in _Proxy Channel_ (/proxy)**
 ```
 /proxy letmedrink (Toggle the module on/off)
 /proxy getskillinfo (see above)
 ```
-
-## Recent updates
- * Support for Zerk buff
- * Command to get skill info
 
 ## How to get new skills information
  * Use the 'getskillinfo' command
