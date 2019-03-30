@@ -16,8 +16,8 @@
         "C_PLAYER_LOCATION": 5,
         "C_START_SKILL": 7,
         "C_USE_ITEM": 3,
-        "S_INVEN": [16,18],
-        "S_LOGIN": [10,12],
+        "S_INVEN": 18,
+        "S_LOGIN": 12,
         "S_START_COOLTIME_ITEM": 1
     }
 }
