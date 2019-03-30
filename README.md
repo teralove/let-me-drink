@@ -1,8 +1,8 @@
 # let-me-drink
 
-Version: 0.1.7
+Version: 0.1.8
 
-Auto 'Lein's Dark Root Beer' module for Tera Proxy
+Auto `Lein's Dark Root Beer` module for Tera Proxy on skill usage.
 
 ## Done
  * Uses Root Beer right after you use buff skills
@@ -14,20 +14,20 @@ Auto 'Lein's Dark Root Beer' module for Tera Proxy
     * Blood Lust
     * Adrenaline Rush
     * Windsong
-    * Can add/remove in 'skills.js' file
+    * Can add/remove in `skills.js` file
  * Will only try to use if you have one or more beer in inventory
- * Can look in 'index.js' file to change:
+ * Can look in `index.js` file to change:
     * Notifications in game
     * Delay to use beer after buff skill
 
 ## Commands
 ```
-/proxy letmedrink (Toggle the module on/off)
-/proxy getskillinfo (see above)
+/8 letmedrink (Toggle the module on/off)
+/8 getskillinfo (see above)
 ```
 
 ## How to get new skills information
- * Use the 'getskillinfo' command
- * See if it show the message: 'Use the desired skill and check proxy console.'
+ * Use the `getskillinfo` command
+ * See if it show the message: "Use the desired skill and check proxy console."
  * Use any skill you want in-game
  * See proxy console to get your infos
