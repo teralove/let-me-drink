@@ -2,18 +2,18 @@
   "files": {
     "skills.js": {
         "overwrite": false,
-        "hash": "15c014d362542373ea23242e31c21937bb2cfbf64ad7304d7877384a401b108b"
+        "hash": "d42176af07aef3123c3235b5dd34296650da9f8c6d3e5bb8e946fa867c54e965"
     },
     "config.json": {
         "overwrite": false,
         "hash": "a812503cb69d7525b472a4b7e05914a3bfe140952619a09d0cec98e86dcaaa44"
     },
-    "index.js": "e381b18282bbdb444ea2f70d1860c031c2ecfb264d26d119909f6cbafc3dc6c2"
+    "index.js": "126ddf1622638f1dcb0face3e88bd1b2f1f13b3bc432b6acdecfc3365075c0e4"
   },
   "defs": {   
-    "S_LOGIN": 10,
+    "S_LOGIN": 12,
     "C_PLAYER_LOCATION": 5,
-    "S_INVEN": 16,    
+    "S_INVEN": 18,    
     "S_START_COOLTIME_ITEM": 1,
     "C_START_SKILL": 7,    
     "C_USE_ITEM": 3
